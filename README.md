@@ -1,7 +1,9 @@
 📊 **AlgoritmoGrafo_Cpp**
+
 Repositório referente ao Trabalho Final da disciplina Algoritmos e Programação: Estruturas Avançadas de Dados.
 
 📝 **Descrição do Trabalho**
+
 O objetivo do projeto é:
 
 Escolher um algoritmo em Grafos;
@@ -15,7 +17,9 @@ A contextualização do algoritmo (origem, autor, tipos de problema que resolve,
 A descrição do problema real escolhido (qual é, quando ocorre, como o algoritmo ajuda a resolvê-lo, etc.).
 
 🚫 **Restrições**
+
 ❗ *Algoritmos permitidos:*
+
 - Algoritmo de Prim
 
 - Algoritmo de Kruskal
@@ -29,15 +33,17 @@ A descrição do problema real escolhido (qual é, quando ocorre, como o algorit
 - Algoritmo A*
 
 🚫 **Algoritmo não permitido:**
-Algoritmo de Dijkstra
+
+- Algoritmo de Dijkstra
 
 📂 **Entrega**
+
 Caso o trabalho seja feito em dupla:
 
 Cada integrante deverá entregar:
 
-    - O arquivo .pdf ou .doc do trabalho escrito;
+- O arquivo .pdf ou .doc do trabalho escrito;
 
-    - O arquivo .cpp contendo o código-fonte;
+- O arquivo .cpp contendo o código-fonte;
 
 A entrega deve ser feita individualmente, por meio do Moodle.
