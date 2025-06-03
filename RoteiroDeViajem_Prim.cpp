@@ -14,7 +14,7 @@ class Grafo
     public:
     map<string, vector<pair<string, int>>> grafo; //grafo representado por um mapa de strings para vetores de pares de strings e inteiros, ordenados por ordem alfabética
                                                    
-    void adicionarAresta(string origem, string destino, int peso)
+    void adicionarAresta(string origem, string destino, int peso) //adicionar as arestas, e aproveitar para fazer a conexão de volta
     {
         grafo[origem].push_back(make_pair(destino,peso));
         grafo[destino].push_back(make_pair(origem,peso));
@@ -45,8 +45,9 @@ class Grafo
         arquivo.close();
     }
 
+    //Exibe como as conexões entre as cidades ficarão
     void exibirConexoes(){
-        for (const auto& [cidade, conexoes] : grafo){
+        for (const auto& [cidade, conexoes] : grafo){ //o const auto& é usado para evitar a cópia dos valores, o auto é usado para inferir o tipo de dado
             cout << cidade << " -> ";
             for (const auto& [conexao, distancia] : conexoes){
                 cout << conexao << " (" << distancia << " km) ";
