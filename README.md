@@ -47,3 +47,4 @@ Cada integrante deverá entregar:
 - O arquivo .cpp contendo o código-fonte;
 
 A entrega deve ser feita individualmente, por meio do Moodle.
+
