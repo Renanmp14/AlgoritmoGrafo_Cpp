@@ -4,7 +4,6 @@
 #include <utility>
 #include <functional>
 #include <algorithm>
-#include <string.h>
 
 using namespace std;
 
@@ -67,39 +66,6 @@ public:
             }
         }
     }
-
-    /*void dfs(int origem)
-    {
-        vector<bool> visitado(adj.size(), false);
-        dfs_util(origem, visitado);
-        cout << "FIM" << endl;
-    }
-
-    vector<int> dfs(int origem, int destino)
-    {
-        vector<bool> visitado(adj.size(), false);
-        vector<int> pai(adj.size(), -1);
-
-        cout << "Iniciando a busca de " << origem << " até " << destino << ":" << endl;
-
-        bool encontrou = dfs_util(origem, destino, visitado, pai);
-
-        vector<int> caminho;
-
-        if (!encontrou)
-        {
-            cout << "Caminho entre " << origem << " e " << destino << " não encontrado..." << endl;
-            return caminho;
-        }
-
-        for (int v = destino; v != -1; v = pai[v])
-            caminho.push_back(v);
-
-        reverse(caminho.begin(), caminho.end());
-
-        return caminho;
-    }
-    */
 
     void algoritmoDePrim(int origem)
     {
