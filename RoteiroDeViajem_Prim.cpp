@@ -47,10 +47,13 @@ class Grafo
 
     //Exibe como as conexões entre as cidades ficarão
     void exibirConexoes(){
-        for (const auto& [cidade, conexoes] : grafo){ //o const auto& é usado para evitar a cópia dos valores, o auto é usado para inferir o tipo de dado
-            cout << cidade << " -> ";
-            for (const auto& [conexao, distancia] : conexoes){
-                cout << conexao << " (" << distancia << " km) ";
+    for (const pair<const string, vector<pair<string,int>>>& item : grafo){
+        const string& cidade = item.first;
+        const vector<pair<string,int>>& conexoes = item.second;
+
+        cout << cidade << " -> ";
+        for (const pair<string,int>& conexao : conexoes){
+            cout << conexao.first << " (" << conexao.second << " km) ";
         }
         cout << "\n"<<endl;
         }
