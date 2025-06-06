@@ -1,14 +1,50 @@
-# Árvore Geradora Mínima com Algoritmo de Prim
+📊 **AlgoritmoGrafo_Cpp**
 
-Este projeto implementa um grafo não direcionado e ponderado em C++ e utiliza o **algoritmo de Prim** para encontrar a **Árvore Geradora Mínima (MST - Minimum Spanning Tree)**.
+Repositório referente ao Trabalho Final da disciplina Algoritmos e Programação: Estruturas Avançadas de Dados.
 
-## 📌 Descrição
+📝 **Descrição do Trabalho**
 
-- O grafo é representado por uma lista de adjacência.
-- As arestas possuem pesos.
-- O algoritmo de Prim é utilizado para encontrar a MST a partir de um vértice de origem fornecido pelo usuário.
-- A estrutura de dados `priority_queue` (min-heap) é usada para garantir que a próxima aresta de menor peso seja escolhida eficientemente.
+O objetivo do projeto é:
 
-## 📂 Estrutura do Projeto
+Escolher um algoritmo em Grafos;
 
-- `main.cpp` — Código-fonte principal com definição da classe `Grafo` e execução do algoritmo de Prim.
+Aplicá-lo a um problema real que possa ser resolvido com esse algoritmo;
+
+Produzir um documento de até 3 páginas, abordando:
+
+A contextualização do algoritmo (origem, autor, tipos de problema que resolve, etc.);
+
+A descrição do problema real escolhido (qual é, quando ocorre, como o algoritmo ajuda a resolvê-lo, etc.).
+
+🚫 **Restrições**
+
+❗ *Algoritmos permitidos:*
+
+- Algoritmo de Prim
+
+- Algoritmo de Kruskal
+
+- Ordenação Topológica
+
+- Algoritmo de Bellman-Ford
+
+- Algoritmo de Ford-Fulkerson
+
+- Algoritmo A*
+
+🚫 **Algoritmo não permitido:**
+
+- Algoritmo de Dijkstra
+
+📂 **Entrega**
+
+Caso o trabalho seja feito em dupla:
+
+Cada integrante deverá entregar:
+
+- O arquivo .pdf ou .doc do trabalho escrito;
+
+- O arquivo .cpp contendo o código-fonte;
+
+A entrega deve ser feita individualmente, por meio do Moodle.
+
