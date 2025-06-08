@@ -5,7 +5,6 @@
 #include <queue>
 #include <utility>
 #include <functional>
-#include <algorithm>
 #include <map>
 
 using namespace std;
@@ -14,19 +13,19 @@ class Grafo
 {
 private:
     vector<vector<pair<int, int>>> adj;
-    map<string, int> nomeParaIndice;
-    vector<string> indiceParaNome;
+    map<string, int> chaveDeIndice;
+    vector<string> indiceParaChave;
 
 public:
     Grafo() {}
 
     void insere_vertice(const string &nome)
     {
-        if (nomeParaIndice.find(nome) == nomeParaIndice.end())
+        if (chaveDeIndice.find(nome) == chaveDeIndice.end())
         {
-            nomeParaIndice[nome] = adj.size();
-            indiceParaNome.push_back(nome);
-            adj.emplace_back(); // adiciona nova lista de adjacência
+            chaveDeIndice[nome] = adj.size();
+            indiceParaChave.push_back(nome);
+            adj.push_back({}); 
         }
     }
 
@@ -35,8 +34,8 @@ public:
         insere_vertice(origem);
         insere_vertice(destino);
 
-        int u = nomeParaIndice[origem];
-        int v = nomeParaIndice[destino];
+        int u = chaveDeIndice[origem];
+        int v = chaveDeIndice[destino];
 
         if (!tem_aresta(u, v))
         {
@@ -55,27 +54,15 @@ public:
         return false;
     }
 
-    // void imprime_arestas() const
-    // {
-    //     for (int u = 0; u < adj.size(); ++u)
-    //     {
-    //         for (const auto &[peso, v] : adj[u])
-    //         {
-    //             if (u < v)
-    //                 cout << "{" << indiceParaNome[u] << ", " << indiceParaNome[v] << "} peso: " << peso << endl;
-    //         }
-    //     }
-    // }
-
     void algoritmoDePrim(const string &origemStr)
     {
-        if (nomeParaIndice.find(origemStr) == nomeParaIndice.end())
+        if (chaveDeIndice.find(origemStr) == chaveDeIndice.end())
         {
             cout << "Vértice de origem não encontrado." << endl;
             return;
         }
 
-        int origem = nomeParaIndice[origemStr];
+        int origem = chaveDeIndice[origemStr];
         vector<bool> visitados(adj.size(), false);
         vector<tuple<int, int, int>> arvoreMinima;
         priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<>> minHeap;
@@ -115,7 +102,7 @@ public:
         cout << "\nTempo de Contaminação: \n";
         for (const auto &[pai, filho, peso] : arvoreMinima)
         {
-            cout << indiceParaNome[pai] << " -> " << indiceParaNome[filho] << " (" << peso << " minutos)\n";
+            cout << indiceParaChave[pai] << " -> " << indiceParaChave[filho] << " (" << peso << " minutos)\n";
             total += peso;
         }
         cout << "Tempo de contaminação Total:  " << total << " minutos" <<endl;
@@ -142,7 +129,7 @@ public:
     void listarVertices()
     {
         //cout << "Vértices disponíveis:\n";
-        for (const auto &[nome, idx] : nomeParaIndice)
+        for (const auto &[nome, idx] : chaveDeIndice)
         {
             cout << "- " << nome << endl;
         }
@@ -156,9 +143,10 @@ int main()
     g.carregarArquivo("arestas.txt");
 
     cout << "\nTipos Sangueneos:\n" << endl;
-    //g.imprime_arestas();
 
     g.listarVertices();
+
+    cout << "\n" << endl;
 
     string origem;
     cout << "Informe o Tipo Sanguineo de inicio: ";
